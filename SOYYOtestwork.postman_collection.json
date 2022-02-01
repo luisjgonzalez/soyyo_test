@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "e4e64147-201a-4bf3-ba48-d26de9a237da",
+		"name": "SOYYOtestwork",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Solicitar Entidades ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startId\":5,\n    \"endId\" : 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/entities/filter",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entities",
+						"filter"
+					]
+				},
+				"description": "Solicita Entidades Ordenadas Alfabeticamente\nRecibe datos Tipo json \nstartId: number integer\nendId: number integer"
+			},
+			"response": []
+		}
+	]
+}

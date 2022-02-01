@@ -1,0 +1,56 @@
+SOYYO_TEST :
+
+Metodo de ejecucion :
+
+    Docker :
+        instalación de Docker en ubuntu
+        Instalamos docker:
+        sudo apt install docker 
+        Añadimos al usuario de ubuntu al grupo docker
+        sudo usermod -aG docker $USER
+        sudo systemctl restart docker
+
+    
+    Construir Contenedor:
+        
+        ubicar la ruta raiz del proyecto y ejectuar el siguiente comando :
+        
+        docker build . -t co.com.soyyo.entity.filter-dev-1_0_0
+
+    Ejecutar el test para comprobar el funcionamiento de los endpoints :
+        docker run co.com.soyyo.entity.filter-dev-1_0_0 npm test
+    
+    Ejecutar la imagen creada y exponer el puerto 3000:
+
+        docker run -p 3000:3000 co.com.soyyo.entity.filter-dev-1_0_0
+
+    Hacer la prueba del Endpoint : 
+        - localhost:3000/entities/filter
+        - 127.0.0.1:3000/entities/filter
+
+    En la ruta raiz se encuentra un archivo de configuracion para POSTMAN al cual ya
+    tiene configurada la request 
+
+    -   SOYYOtestwork.postman_collection.json
+
+    METHOD : POST
+    PATH : localhost:3000/entities/filter 
+    BODY : {
+        "startId" : 1
+        "endId" : 5
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
